@@ -22,6 +22,7 @@ This directory contains the MNIST dataset and its processed versions for trainin
 
 ## 2. Directory Structure
 
+```
 Folder PATH listing
 .
 +---mnist                      <-- Processed MNIST dataset

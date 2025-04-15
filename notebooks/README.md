@@ -36,11 +36,13 @@ This directory contains Jupyter notebooks for interactive exploration and learni
 
 ## 2. Directory Contents
 
+```
 Folder PATH listing
 .
 +---CNN_MNIST-data.ipynb       <-- Main notebook for the project
 +---exploratory_analysis.ipynb <-- Basic data exploration notebook
 +---README.md                  <-- This documentation file
+```
 
 ## 3. Notebook Descriptions
 

@@ -27,6 +27,7 @@ This directory contains visualizations generated for the CNN MNIST project. Thes
 
 ## 2. Directory Contents
 
+```
 Folder PATH listing
 .
 +---confusion_matrices         <-- Directory for confusion matrix visualizations
@@ -43,6 +44,7 @@ Folder PATH listing
 +---simple_cnn_misclassified.png <-- Misclassified examples by simple CNN
 +---simple_cnn_training_history.png <-- Training metrics for simple CNN model
 +---training_history.png       <-- Training and validation metrics over epochs
+```
 
 ## 3. Visualization Descriptions
 

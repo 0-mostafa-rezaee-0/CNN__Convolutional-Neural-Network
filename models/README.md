@@ -25,6 +25,7 @@ The `models` directory contains implementations of Convolutional Neural Network 
 
 ## 2. Directory Structure
 
+```
 Folder PATH listing
 .
 +---architectures              <-- Model architecture implementations

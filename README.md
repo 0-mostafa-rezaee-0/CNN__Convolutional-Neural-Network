@@ -89,6 +89,7 @@ This project serves as a learning tool for:
 
 ## 4. Project Structure
 
+```
 Folder PATH listing
 .
 +---data                       <-- Data directory for MNIST dataset

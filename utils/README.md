@@ -28,42 +28,11 @@ The `utils` directory contains reusable utility functions and helper classes tha
 
 ## 2. Directory Structure
 
+```
 Folder PATH listing
 .
 +---README.md                  <-- This documentation file
 +---toc_generator.py           <-- Table of contents generator for markdown files
-```
-utils/
-├── data/                  # Data handling utilities
-│   ├── __init__.py
-│   ├── loader.py          # Data loading functions
-│   ├── preprocessing.py   # Data preprocessing functions
-│   └── augmentation.py    # Data augmentation utilities
-│
-├── visualization/         # Visualization tools
-│   ├── __init__.py
-│   ├── plotting.py        # General plotting functions
-│   ├── confusion_matrix.py # Confusion matrix visualization
-│   └── gradcam.py         # Grad-CAM visualization for CNN interpretability
-│
-├── model/                 # Model-related utilities
-│   ├── __init__.py
-│   ├── checkpoints.py     # Model checkpoint management
-│   ├── metrics.py         # Custom metrics implementations
-│   └── callbacks.py       # Custom callback implementations
-│
-├── performance/           # Performance evaluation utilities
-│   ├── __init__.py
-│   ├── metrics_eval.py    # Functions for calculating performance metrics
-│   └── profiling.py       # Model profiling utilities
-│
-├── deployment/            # Deployment utilities
-│   ├── __init__.py
-│   ├── model_export.py    # Functions for exporting models
-│   ├── optimizations.py   # Model optimization utilities
-│   └── serving.py         # Utilities for model serving
-│
-└── __init__.py            # Package initialization
 ```
 
 ## 3. Data Utilities

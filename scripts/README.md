@@ -27,6 +27,7 @@ This directory contains Python scripts for data processing, model training, eval
 
 ## 2. Scripts Inventory
 
+```
 Folder PATH listing
 .
 +---data_prep.py               <-- Download and preprocess MNIST data
@@ -34,6 +35,7 @@ Folder PATH listing
 +---README.md                  <-- This documentation file
 +---train_cnn.py               <-- Train the CNN model
 +---visualize_features.py      <-- Generate feature map visualizations
+```
 
 ### 2.1 Data Processing Scripts
 
