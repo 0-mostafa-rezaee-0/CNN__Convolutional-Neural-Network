@@ -163,6 +163,7 @@ docs/_build/
 target/
 
 # Jupyter Notebook
+.ipynb_checkpoints
 
 # IPython
 
@@ -356,3 +357,38 @@ ChatPDF
 Vision
 Full Page
 Invite & Earn
+
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# Environment
+.env
+.venv
+venv/
+ENV/
+
+# Data files (optional to ignore raw data)
+data/mnist/
+
+# Saved models (large binary files)
+*.h5
+
+# Figures and visualizations
+# figures/ (Keep these tracked by Git to show results in repository)
+
+# System files
+.DS_Store
+Thumbs.db
