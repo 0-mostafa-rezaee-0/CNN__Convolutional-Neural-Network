@@ -41,7 +41,6 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#62-cnn-architecture">6.2. CNN Architecture</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#63-model-training">6.3. Model Training</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#64-visualizations">6.4. Visualizations</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#65-utility-scripts">6.5. Utility Scripts</a><br>
   </div>
 </details>
 &nbsp;
@@ -155,25 +154,13 @@ To run the entire CNN MNIST pipeline from data preparation to visualization:
 
 ```bash
 # Inside the Docker container
-./run_pipeline.sh
+python scripts/data_prep.py
+python scripts/extract_sample_images.py
+python scripts/train_cnn.py
+python scripts/visualize_features.py
 ```
 
-This script will:
-1. Prepare the MNIST dataset
-2. Extract and visualize sample images
-3. Train the CNN model with data augmentation
-4. Visualize feature maps from the trained model
-
-Additionally, you can run an optional comparison between CNN and traditional ANN:
-
-```bash
-# Run the pipeline with CNN vs ANN comparison
-./run_pipeline.sh --compare
-```
-
-This will add an additional step that trains both model types and generates a detailed performance comparison.
-
-Alternatively, you can run each script individually as described in the [Scripts Documentation](scripts/README.md).
+Alternatively, you can run these scripts through the Jupyter Lab interface by opening and executing the notebooks.
 
 ## 6. Project Components
 
@@ -208,20 +195,10 @@ The project includes visualizations for:
 - CNN feature maps
 - Examples of correct and incorrect predictions
 
-### 6.5 Utility Scripts
-
-The project includes utility scripts for maintenance and monitoring:
-- Project structure validation
-- Project status summary generation
-
-These scripts make it easier to verify the project's integrity and get a quick overview of the current state. For details, see the [Utils Documentation](utils/README.md).
-
 ## 7. Learning Exercises
 
 1. Modify the CNN architecture and observe how it affects performance
 2. Compare the CNN results with a simple multi-layer perceptron (MLP)
-   - Use the built-in comparison tool: `python utils/model_comparison.py`
-   - Analyze why CNNs perform better for image classification tasks
 3. Experiment with different data augmentation techniques
 4. Visualize feature maps from different layers to understand what the CNN learns
 
