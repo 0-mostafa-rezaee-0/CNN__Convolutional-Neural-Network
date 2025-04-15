@@ -8,10 +8,11 @@ This directory contains Python scripts for each major function of the MNIST digi
 
 ```
 scripts/
-├── data_prep.py            # Download and preprocess MNIST data
+├── analyze_predictions.py   # Detailed analysis of model predictions
+├── data_prep.py             # Download and preprocess MNIST data
 ├── extract_sample_images.py # Extract sample images for visualization
-├── train_cnn.py            # Train the CNN model
-└── visualize_features.py   # Generate feature map visualizations
+├── train_cnn.py             # Train the CNN model
+└── visualize_features.py    # Generate feature map visualizations
 ```
 
 ## 3. Script Descriptions
@@ -71,6 +72,22 @@ Usage:
 ```bash
 python scripts/visualize_features.py
 ```
+
+### 3.5 analyze_predictions.py
+
+Provides detailed analysis of the trained model's predictions:
+- Generates comprehensive confusion matrix visualizations
+- Creates classification metrics report with per-digit performance
+- Visualizes prediction confidence distribution
+- Identifies and visualizes the most commonly confused digit pairs
+- Outputs a detailed text report of the analysis findings
+
+Usage:
+```bash
+python scripts/analyze_predictions.py --model_path models/mnist_cnn_best.h5
+```
+
+The script will generate multiple visualizations in the figures directory and a detailed text report.
 
 ## 4. Common Parameters
 
