@@ -2,7 +2,7 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-# Install system dependencies (including curl for healthcheck)
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
@@ -22,4 +22,4 @@ EXPOSE 8888
 
 # Set up entrypoint
 RUN chmod +x start.sh
-ENTRYPOINT ["./start.sh"] 
+ENTRYPOINT ["./start.sh"]

@@ -21,4 +21,4 @@ fi
 
 # Run Jupyter lab by default
 echo "Starting Jupyter Lab..."
-jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password='' 
+jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''

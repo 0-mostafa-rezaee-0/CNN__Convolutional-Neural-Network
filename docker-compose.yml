@@ -6,15 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8888:8888"
+      - "8889:8888"
     volumes:
       - .:/app
     environment:
       - JUPYTER_ENABLE_LAB=yes
-    command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password='' 
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8888/api/status"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s 
+    command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
