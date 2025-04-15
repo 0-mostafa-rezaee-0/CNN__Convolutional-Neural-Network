@@ -4,29 +4,67 @@
 
 <div style="text-align:center; margin-bottom:30px;">A comprehensive project for digit recognition using Convolutional Neural Networks in Docker</div>
 
-## Table of Contents
+## Table of Contents 
 <details>
-<summary>Click to expand</summary>
-
-- [1. Project Overview](#1-project-overview)
-- [2. Educational Objectives](#2-educational-objectives)
-- [3. Prerequisites](#3-prerequisites)
-- [4. Project Structure](#4-project-structure)
-- [5. Getting Started](#5-getting-started)
-  - [5.1 Docker Setup](#51-docker-setup)
-  - [5.2 Running the Project](#52-running-the-project)
-- [6. Project Components](#6-project-components)
-  - [6.1 Data Preparation](#61-data-preparation)
-  - [6.2 CNN Architecture](#62-cnn-architecture)
-  - [6.3 Model Training](#63-model-training)
-  - [6.4 Visualizations](#64-visualizations)
-  - [6.5 Utility Scripts](#65-utility-scripts)
-- [7. Learning Exercises](#7-learning-exercises)
-- [8. Common Issues](#8-common-issues)
-- [9. Resources for Further Learning](#9-resources-for-further-learning)
-- [10. License](#10-license)
-
+  <summary><a href="#1-project-overview"><i><b>1. Project Overview</b></i></a></summary>
 </details>
+&nbsp;
+
+<details>
+  <summary><a href="#2-educational-objectives"><i><b>2. Educational Objectives</b></i></a></summary>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#3-prerequisites"><i><b>3. Prerequisites</b></i></a></summary>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#4-project-structure"><i><b>4. Project Structure</b></i></a></summary>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#5-getting-started"><i><b>5. Getting Started</b></i></a></summary>
+  <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#51-docker-setup">5.1. Docker Setup</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#52-running-the-project">5.2. Running the Project</a><br>
+  </div>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#6-project-components"><i><b>6. Project Components</b></i></a></summary>
+  <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#61-data-preparation">6.1. Data Preparation</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#62-cnn-architecture">6.2. CNN Architecture</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#63-model-training">6.3. Model Training</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#64-visualizations">6.4. Visualizations</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#65-utility-scripts">6.5. Utility Scripts</a><br>
+  </div>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#7-learning-exercises"><i><b>7. Learning Exercises</b></i></a></summary>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#8-common-issues"><i><b>8. Common Issues</b></i></a></summary>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#9-resources-for-further-learning"><i><b>9. Resources for Further Learning</b></i></a></summary>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#10-license"><i><b>10. License</b></i></a></summary>
+</details>
+&nbsp;
 
 ## 1. Project Overview
 

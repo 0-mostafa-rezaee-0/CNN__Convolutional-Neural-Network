@@ -1,5 +1,33 @@
 <div style="font-size:2em; font-weight:bold; text-align:center; margin-top:20px;">Scripts Directory</div>
 
+## Table of Contents 
+<details>
+  <summary><a href="#1-overview"><i><b>1. Overview</b></i></a></summary>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#2-directory-contents"><i><b>2. Directory Contents</b></i></a></summary>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#3-script-descriptions"><i><b>3. Script Descriptions</b></i></a></summary>
+  <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#31-data_preppy">3.1. data_prep.py</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#32-extract_sample_imagespy">3.2. extract_sample_images.py</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#33-train_cnnpy">3.3. train_cnn.py</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#34-visualize_featurespy">3.4. visualize_features.py</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#35-analyze_predictionspy">3.5. analyze_predictions.py</a><br>
+  </div>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#4-common-parameters"><i><b>4. Common Parameters</b></i></a></summary>
+</details>
+&nbsp;
+
 ## 1. Overview
 
 This directory contains Python scripts for each major function of the MNIST digit recognition project.
