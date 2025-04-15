@@ -1,131 +1,288 @@
 <div style="font-size:2em; font-weight:bold; text-align:center; margin-top:20px;">Scripts Directory</div>
 
-## Table of Contents 
+## Table of Contents
 <div>
   &nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-overview"><i><b>1. Overview</b></i></a>
 </div>
 &nbsp;
 
 <div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#2-directory-contents"><i><b>2. Directory Contents</b></i></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#2-scripts-inventory"><i><b>2. Scripts Inventory</b></i></a>
 </div>
 &nbsp;
 
-<details>
-  <summary><a href="#3-script-descriptions"><i><b>3. Script Descriptions</b></i></a></summary>
-  <div>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#31-data_preppy">3.1. data_prep.py</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#32-extract_sample_imagespy">3.2. extract_sample_images.py</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#33-train_cnnpy">3.3. train_cnn.py</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#34-visualize_featurespy">3.4. visualize_features.py</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#35-analyze_predictionspy">3.5. analyze_predictions.py</a><br>
-  </div>
-</details>
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-common-usage-patterns"><i><b>3. Common Usage Patterns</b></i></a>
+</div>
 &nbsp;
 
 <div>
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#4-common-parameters"><i><b>4. Common Parameters</b></i></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#4-development-guidelines"><i><b>4. Development Guidelines</b></i></a>
 </div>
 &nbsp;
 
 ## 1. Overview
 
-This directory contains Python scripts for each major function of the MNIST digit recognition project.
+This directory contains Python scripts for data processing, model training, evaluation, and deployment in our CNN-based MNIST classification project. These scripts automate common tasks, ensure reproducibility, and provide utilities for working with the MNIST dataset and TensorFlow/Keras models.
 
-## 2. Directory Contents
+## 2. Scripts Inventory
 
-```
-scripts/
-├── analyze_predictions.py   # Detailed analysis of model predictions
-├── data_prep.py             # Download and preprocess MNIST data
-├── extract_sample_images.py # Extract sample images for visualization
-├── train_cnn.py             # Train the CNN model
-└── visualize_features.py    # Generate feature map visualizations
-```
+### 2.1 Data Processing Scripts
 
-## 3. Script Descriptions
+#### `download_data.py`
+Downloads the MNIST dataset from the official source and saves it to the `data/raw` directory.
 
-### 3.1 data_prep.py
-
-Downloads and preprocesses the MNIST dataset:
-- Downloads MNIST data if not already available
-- Normalizes the pixel values to [0, 1]
-- Reshapes the data to include the channel dimension
-- Splits the data into training, validation, and test sets
-- Saves the processed data for later use
-
-Usage:
 ```bash
-python scripts/data_prep.py
+python scripts/download_data.py --output_dir data/raw
 ```
 
-### 3.2 extract_sample_images.py
+#### `preprocess_data.py`
+Preprocesses raw MNIST data by normalizing, reshaping, and splitting into training, validation, and test sets.
 
-Extracts sample images from the MNIST dataset for visualization:
-- Loads the MNIST dataset
-- Selects representative samples from each digit class
-- Saves the sample images to the data/mnist_samples directory
-- Generates a grid visualization of the samples
-
-Usage:
 ```bash
-python scripts/extract_sample_images.py
+python scripts/preprocess_data.py --raw_dir data/raw --processed_dir data/processed --val_split 0.1
 ```
 
-### 3.3 train_cnn.py
+#### `augment_data.py`
+Creates augmented versions of the training data to improve model generalization.
 
-Trains the CNN model on the MNIST dataset:
-- Loads the preprocessed MNIST data
-- Defines the CNN architecture
-- Implements data augmentation
-- Sets up early stopping and model checkpointing
-- Trains the model and saves the best and final versions
-- Generates training history visualizations
-
-Usage:
 ```bash
-python scripts/train_cnn.py
+python scripts/augment_data.py --input_dir data/processed --output_dir data/augmented --augmentation_factor 2
 ```
 
-### 3.4 visualize_features.py
+#### `utils/data_helpers.py`
+Contains utility functions for data loading, transformation, and visualization.
 
-Generates visualizations of the CNN feature maps:
-- Loads the trained model
-- Selects sample input images
-- Extracts feature maps from various layers
-- Creates and saves visualizations of the feature maps
-- Helps in understanding what patterns the CNN is detecting
-
-Usage:
-```bash
-python scripts/visualize_features.py
+```python
+from scripts.utils.data_helpers import load_mnist_data, visualize_samples
 ```
 
-### 3.5 analyze_predictions.py
+### 2.2 Model Training Scripts
 
-Provides detailed analysis of the trained model's predictions:
-- Generates comprehensive confusion matrix visualizations
-- Creates classification metrics report with per-digit performance
-- Visualizes prediction confidence distribution
-- Identifies and visualizes the most commonly confused digit pairs
-- Outputs a detailed text report of the analysis findings
+#### `train_model.py`
+Trains a CNN model on the MNIST dataset with specified hyperparameters.
 
-Usage:
 ```bash
-python scripts/analyze_predictions.py --model_path models/mnist_cnn_best.h5
+python scripts/train_model.py --model_type basic_cnn --data_dir data/processed --model_dir models/basic_cnn --epochs 10 --batch_size 64
 ```
 
-The script will generate multiple visualizations in the figures directory and a detailed text report.
+#### `hyperparameter_search.py`
+Performs hyperparameter optimization using grid or random search strategies.
 
-## 4. Common Parameters
-
-Most scripts accept the following command-line parameters:
-- `--data_dir`: Directory for the MNIST data (default: 'data/mnist')
-- `--output_dir`: Directory for output files (default: varies by script)
-- `--batch_size`: Batch size for processing (default: 32)
-- `--random_seed`: Random seed for reproducibility (default: 42)
-
-You can get help on the parameters for any script using:
 ```bash
-python scripts/<script_name>.py --help
-``` 
+python scripts/hyperparameter_search.py --model_type advanced_cnn --search_method random --trials 20 --output_dir models/hyperparameter_results
+```
+
+#### `train_distributed.py`
+Trains models using distributed training across multiple GPUs or machines.
+
+```bash
+python scripts/train_distributed.py --num_gpus 2 --model_type mobilenet --data_dir data/processed --model_dir models/mobilenet_distributed
+```
+
+### 2.3 Evaluation Scripts
+
+#### `evaluate_model.py`
+Evaluates a trained model on the test set and generates performance metrics.
+
+```bash
+python scripts/evaluate_model.py --model_path models/basic_cnn/final_model.h5 --data_dir data/processed --output_dir results/basic_cnn
+```
+
+#### `visualize_results.py`
+Generates visualizations for model predictions, confusion matrices, and performance metrics.
+
+```bash
+python scripts/visualize_results.py --results_dir results/basic_cnn --output_dir visualizations/basic_cnn
+```
+
+#### `benchmark_models.py`
+Benchmarks multiple models and compares their performance metrics.
+
+```bash
+python scripts/benchmark_models.py --model_dirs models/basic_cnn,models/advanced_cnn,models/mobilenet --output_dir benchmarks
+```
+
+### 2.4 Model Export and Deployment Scripts
+
+#### `export_model.py`
+Exports trained models to various formats (TensorFlow SavedModel, TFLite, ONNX).
+
+```bash
+python scripts/export_model.py --model_path models/basic_cnn/final_model.h5 --export_dir exports --formats savedmodel,tflite,onnx
+```
+
+#### `optimize_model.py`
+Applies optimization techniques to models for deployment (quantization, pruning).
+
+```bash
+python scripts/optimize_model.py --model_path models/basic_cnn/final_model.h5 --output_dir models/optimized --technique quantization
+```
+
+#### `deploy_model.py`
+Prepares a model for deployment to target platforms (TF Serving, TF.js, edge devices).
+
+```bash
+python scripts/deploy_model.py --model_path exports/basic_cnn.tflite --target edge --output_dir deployment
+```
+
+### 2.5 Inference Scripts
+
+#### `predict.py`
+Makes predictions on new data using a trained model.
+
+```bash
+python scripts/predict.py --model_path models/basic_cnn/final_model.h5 --image_path data/samples/sample_digits/7/sample_7_01.png
+```
+
+#### `predict_batch.py`
+Processes batches of images for inference.
+
+```bash
+python scripts/predict_batch.py --model_path models/basic_cnn/final_model.h5 --image_dir data/samples/difficult_samples --output_file predictions.csv
+```
+
+### 2.6 Monitoring and Logging Scripts
+
+#### `monitor_training.py`
+Monitors and logs model training metrics in real-time.
+
+```bash
+python scripts/monitor_training.py --log_dir logs/training --port 8080
+```
+
+#### `utils/logging_config.py`
+Provides configuration for consistent logging across scripts.
+
+```python
+from scripts.utils.logging_config import setup_logger
+logger = setup_logger(__name__)
+```
+
+## 3. Common Usage Patterns
+
+### 3.1 Complete Training Pipeline
+
+The following shows a typical sequence for a complete training pipeline:
+
+```bash
+# 1. Download the data
+python scripts/download_data.py --output_dir data/raw
+
+# 2. Preprocess the data
+python scripts/preprocess_data.py --raw_dir data/raw --processed_dir data/processed
+
+# 3. Create augmented training data
+python scripts/augment_data.py --input_dir data/processed --output_dir data/augmented
+
+# 4. Train the model
+python scripts/train_model.py --model_type advanced_cnn --data_dir data/processed --augmented_dir data/augmented --model_dir models/advanced_cnn
+
+# 5. Evaluate the model
+python scripts/evaluate_model.py --model_path models/advanced_cnn/final_model.h5 --data_dir data/processed --output_dir results/advanced_cnn
+
+# 6. Export the model for deployment
+python scripts/export_model.py --model_path models/advanced_cnn/final_model.h5 --export_dir exports --formats tflite
+```
+
+### 3.2 Hyperparameter Optimization
+
+```bash
+# 1. Perform hyperparameter search
+python scripts/hyperparameter_search.py --model_type basic_cnn --search_method random --trials 20 --output_dir models/hyperparameter_results
+
+# 2. Train with best parameters
+python scripts/train_model.py --model_type basic_cnn --config models/hyperparameter_results/best_params.json --data_dir data/processed --model_dir models/basic_cnn_optimized
+```
+
+### 3.3 Model Comparison and Benchmarking
+
+```bash
+# 1. Train multiple models
+python scripts/train_model.py --model_type basic_cnn --data_dir data/processed --model_dir models/basic_cnn
+python scripts/train_model.py --model_type advanced_cnn --data_dir data/processed --model_dir models/advanced_cnn
+python scripts/train_model.py --model_type mobilenet --data_dir data/processed --model_dir models/mobilenet
+
+# 2. Benchmark the models
+python scripts/benchmark_models.py --model_dirs models/basic_cnn,models/advanced_cnn,models/mobilenet --output_dir benchmarks
+
+# 3. Visualize comparative results
+python scripts/visualize_results.py --results_dir benchmarks --output_dir visualizations/model_comparison --comparison
+```
+
+## 4. Development Guidelines
+
+### 4.1 Script Structure
+
+All scripts should follow this basic structure:
+
+```python
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Script description and purpose.
+"""
+
+import argparse
+import os
+import sys
+from pathlib import Path
+
+# Add project root to path if needed
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
+# Import project modules
+from scripts.utils.logging_config import setup_logger
+
+# Setup logging
+logger = setup_logger(__name__)
+
+def parse_args():
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(description='Script description')
+    # Add arguments
+    parser.add_argument('--required_arg', type=str, required=True, help='Required argument')
+    parser.add_argument('--optional_arg', type=int, default=10, help='Optional argument with default')
+    return parser.parse_args()
+
+def main():
+    """Main function."""
+    args = parse_args()
+    logger.info(f"Starting script with args: {args}")
+    
+    # Script logic here
+    
+    logger.info("Script completed successfully")
+
+if __name__ == "__main__":
+    main()
+```
+
+### 4.2 Coding Standards
+
+1. **Documentation**: All scripts must have docstrings and clear argument help text.
+2. **Error Handling**: Use try-except blocks for robust error handling.
+3. **Logging**: Use the project's logging utilities rather than print statements.
+4. **Configuration**: Use command-line arguments or config files, not hardcoded values.
+5. **Testing**: Include unit tests for critical functions in the `tests` directory.
+
+### 4.3 Adding New Scripts
+
+When adding new scripts:
+
+1. Follow the established naming conventions
+2. Include comprehensive documentation
+3. Update this README.md file
+4. Ensure compatibility with existing scripts
+5. Add example usage commands
+
+### 4.4 Dependencies
+
+Scripts should declare their dependencies properly. If a script requires packages beyond the core project dependencies, add them to a requirements section in the script's docstring.
+
+### 4.5 Performance Considerations
+
+- Use vectorized operations when possible (NumPy/TensorFlow)
+- For large datasets, implement batch processing
+- Include progress indicators for long-running operations
+- Add timestamps to logs for performance analysis
