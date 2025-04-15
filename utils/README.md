@@ -28,6 +28,10 @@ The `utils` directory contains reusable utility functions and helper classes tha
 
 ## 2. Directory Structure
 
+Folder PATH listing
+.
++---README.md                  <-- This documentation file
++---toc_generator.py           <-- Table of contents generator for markdown files
 ```
 utils/
 ├── data/                  # Data handling utilities

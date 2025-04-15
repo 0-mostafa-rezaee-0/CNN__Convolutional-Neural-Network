@@ -22,35 +22,27 @@ This directory contains the MNIST dataset and its processed versions for trainin
 
 ## 2. Directory Structure
 
-```
-data/
-├── raw/                     # Original unprocessed MNIST data
-│   ├── train-images-idx3-ubyte.gz     # Training images
-│   ├── train-labels-idx1-ubyte.gz     # Training labels
-│   ├── t10k-images-idx3-ubyte.gz      # Test images
-│   └── t10k-labels-idx1-ubyte.gz      # Test labels
-│
-├── processed/               # Processed data ready for training
-│   ├── X_train.npy          # Processed training images
-│   ├── y_train.npy          # Processed training labels
-│   ├── X_val.npy            # Validation images
-│   ├── y_val.npy            # Validation labels
-│   ├── X_test.npy           # Test images
-│   └── y_test.npy           # Test labels
-│
-├── augmented/               # Data augmentation outputs
-│   ├── augmented_X_train.npy  # Augmented training images
-│   └── augmented_y_train.npy  # Corresponding labels
-│
-├── metadata/                # Dataset metadata and statistics
-│   ├── dataset_stats.json   # Statistical information about the dataset
-│   ├── class_distribution.json  # Distribution of classes
-│   └── preprocessing_params.json  # Parameters used in preprocessing
-│
-└── samples/                 # Sample images for visualization and testing
-    ├── sample_digit_0.png   # Sample of digit 0
-    ├── sample_digit_1.png   # Sample of digit 1
-    └── ...
+Folder PATH listing
+.
++---mnist                      <-- Processed MNIST dataset
+|   +---x_test.npy             <-- Test images (10,000 samples)
+|   +---x_train.npy            <-- Training images (54,000 samples)
+|   +---x_val.npy              <-- Validation images (6,000 samples)
+|   +---y_test.npy             <-- Test labels (one-hot encoded)
+|   +---y_train.npy            <-- Training labels (one-hot encoded)
+|   +---y_val.npy              <-- Validation labels (one-hot encoded)
+|
++---mnist_samples              <-- Sample digit images extracted from dataset
+|   +---digit_0_sample_0.png   <-- Sample of digit 0
+|   +---digit_0_sample_1.png   <-- Sample of digit 0
+|   +---digit_0_sample_2.png   <-- Sample of digit 0
+|   +---digit_0_sample_3.png   <-- Sample of digit 0
+|   +---digit_0_sample_4.png   <-- Sample of digit 0
+|   +---digit_1_sample_0.png   <-- Sample of digit 1
+|   +---digit_1_sample_1.png   <-- Sample of digit 1
+|   +---...                    <-- More sample images
+|
++---README.md                  <-- This documentation file
 ```
 
 ## 3. Data Processing Pipeline

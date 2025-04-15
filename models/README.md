@@ -25,40 +25,47 @@ The `models` directory contains implementations of Convolutional Neural Network 
 
 ## 2. Directory Structure
 
-```
-models/
-├── architectures/             # Model architecture implementations
-│   ├── __init__.py
-│   ├── simple_cnn.py          # Simple CNN implementation
-│   ├── lenet5.py              # LeNet-5 CNN architecture
-│   ├── resnet.py              # ResNet-based architecture
-│   └── custom_cnn.py          # Custom CNN architecture
-│
-├── configs/                   # Model configuration files
-│   ├── __init__.py
-│   ├── base_config.py         # Base configuration class
-│   ├── simple_cnn_config.py   # Simple CNN configuration
-│   ├── lenet5_config.py       # LeNet-5 configuration
-│   └── resnet_config.py       # ResNet configuration
-│
-├── training/                  # Model training utilities
-│   ├── __init__.py
-│   ├── trainer.py             # Trainer class for model training
-│   └── callbacks.py           # Custom callbacks for training
-│
-├── evaluation/                # Model evaluation utilities
-│   ├── __init__.py
-│   ├── evaluator.py           # Evaluator class for model evaluation
-│   └── metrics.py             # Custom metrics for evaluation
-│
-├── pretrained/                # Pretrained model weights
-│   ├── simple_cnn/            # Simple CNN pretrained weights
-│   ├── lenet5/                # LeNet-5 pretrained weights
-│   └── resnet/                # ResNet pretrained weights
-│
-├── model_factory.py           # Factory for creating model instances
-├── model_registry.py          # Registry of available models
-└── __init__.py                # Package initialization
+Folder PATH listing
+.
++---architectures              <-- Model architecture implementations
+|   +---__init__.py            <-- Package initialization
+|   +---custom_cnn.py          <-- Custom CNN implementation
+|   +---lenet5.py              <-- LeNet-5 CNN architecture
+|   +---resnet.py              <-- ResNet-based architecture
+|   +---simple_cnn.py          <-- Simple CNN implementation
+|
++---checkpoints                <-- Model checkpoints during training
+|
++---configs                    <-- Model configuration files
+|   +---__init__.py            <-- Package initialization
+|   +---base_config.py         <-- Base configuration class
+|   +---custom_cnn_config.py   <-- Custom CNN configuration
+|   +---lenet5_config.py       <-- LeNet-5 configuration
+|   +---resnet_config.py       <-- ResNet configuration
+|   +---simple_cnn_config.py   <-- Simple CNN configuration
+|
++---evaluation                 <-- Model evaluation utilities
+|   +---__init__.py            <-- Package initialization
+|   +---evaluator.py           <-- Evaluator class for model evaluation
+|   +---metrics.py             <-- Custom metrics for evaluation
+|
++---pretrained                 <-- Pretrained model weights
+|   +---lenet5                 <-- LeNet-5 pretrained weights
+|   +---resnet                 <-- ResNet pretrained weights
+|   +---simple_cnn             <-- Simple CNN pretrained weights
+|
++---training                   <-- Model training utilities
+|   +---__init__.py            <-- Package initialization
+|   +---callbacks.py           <-- Custom callbacks for training
+|   +---trainer.py             <-- Trainer class for model training
+|
++---__init__.py                <-- Package initialization
++---mnist_cnn_best.h5          <-- Best model based on validation accuracy
++---mnist_cnn_final.h5         <-- Final trained model
++---model_factory.py           <-- Factory for creating model instances
++---model_registry.py          <-- Registry of available models
++---README.md                  <-- This documentation file
++---simple_cnn_final.h5        <-- Trained simple CNN model
 ```
 
 ## 3. Model Architectures

@@ -27,14 +27,22 @@ This directory contains visualizations generated for the CNN MNIST project. Thes
 
 ## 2. Directory Contents
 
-```
-figures/
-├── mnist_samples.png         <-- Grid of sample MNIST digits
-├── confusion_matrix.png      <-- Confusion matrix of model predictions
-├── training_history.png      <-- Training and validation metrics over epochs
-├── feature_maps.png          <-- CNN layer activations (feature maps)
-└── prediction_samples.png    <-- Examples of correct and incorrect predictions
-```
+Folder PATH listing
+.
++---confusion_matrices         <-- Directory for confusion matrix visualizations
+|
++---feature_maps               <-- Directory for CNN feature map visualizations
+|   +---test_samples.png       <-- Feature map activations for test samples
+|
++---confusion_matrix.png       <-- Confusion matrix of model predictions
++---feature_maps.png           <-- CNN layer activations visualization
++---mnist_samples.png          <-- Grid of sample MNIST digits
++---prediction_samples.png     <-- Examples of correct and incorrect predictions
++---README.md                  <-- This documentation file
++---simple_cnn_confusion_matrix.png <-- Confusion matrix for simple CNN model
++---simple_cnn_misclassified.png <-- Misclassified examples by simple CNN
++---simple_cnn_training_history.png <-- Training metrics for simple CNN model
++---training_history.png       <-- Training and validation metrics over epochs
 
 ## 3. Visualization Descriptions
 
