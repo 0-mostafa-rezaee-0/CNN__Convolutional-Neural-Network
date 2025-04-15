@@ -1,14 +1,14 @@
 <div style="font-size:2em; font-weight:bold; text-align:center; margin-top:20px;">Utilities Directory</div>
 
 ## Table of Contents 
-<details>
-  <summary><a href="#1-overview"><i><b>1. Overview</b></i></a></summary>
-</details>
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-overview"><i><b>1. Overview</b></i></a>
+</div>
 &nbsp;
 
-<details>
-  <summary><a href="#2-directory-contents"><i><b>2. Directory Contents</b></i></a></summary>
-</details>
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#2-directory-contents"><i><b>2. Directory Contents</b></i></a>
+</div>
 &nbsp;
 
 <details>
@@ -21,9 +21,9 @@
 </details>
 &nbsp;
 
-<details>
-  <summary><a href="#4-development"><i><b>4. Development</b></i></a></summary>
-</details>
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#4-development"><i><b>4. Development</b></i></a>
+</div>
 &nbsp;
 
 ## 1. Overview
