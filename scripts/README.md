@@ -1,0 +1,86 @@
+<div style="font-size:2em; font-weight:bold; text-align:center; margin-top:20px;">Scripts Directory</div>
+
+## 1. Overview
+
+This directory contains Python scripts for each major function of the MNIST digit recognition project.
+
+## 2. Directory Contents
+
+```
+scripts/
+├── data_prep.py            # Download and preprocess MNIST data
+├── extract_sample_images.py # Extract sample images for visualization
+├── train_cnn.py            # Train the CNN model
+└── visualize_features.py   # Generate feature map visualizations
+```
+
+## 3. Script Descriptions
+
+### 3.1 data_prep.py
+
+Downloads and preprocesses the MNIST dataset:
+- Downloads MNIST data if not already available
+- Normalizes the pixel values to [0, 1]
+- Reshapes the data to include the channel dimension
+- Splits the data into training, validation, and test sets
+- Saves the processed data for later use
+
+Usage:
+```bash
+python scripts/data_prep.py
+```
+
+### 3.2 extract_sample_images.py
+
+Extracts sample images from the MNIST dataset for visualization:
+- Loads the MNIST dataset
+- Selects representative samples from each digit class
+- Saves the sample images to the data/mnist_samples directory
+- Generates a grid visualization of the samples
+
+Usage:
+```bash
+python scripts/extract_sample_images.py
+```
+
+### 3.3 train_cnn.py
+
+Trains the CNN model on the MNIST dataset:
+- Loads the preprocessed MNIST data
+- Defines the CNN architecture
+- Implements data augmentation
+- Sets up early stopping and model checkpointing
+- Trains the model and saves the best and final versions
+- Generates training history visualizations
+
+Usage:
+```bash
+python scripts/train_cnn.py
+```
+
+### 3.4 visualize_features.py
+
+Generates visualizations of the CNN feature maps:
+- Loads the trained model
+- Selects sample input images
+- Extracts feature maps from various layers
+- Creates and saves visualizations of the feature maps
+- Helps in understanding what patterns the CNN is detecting
+
+Usage:
+```bash
+python scripts/visualize_features.py
+```
+
+## 4. Common Parameters
+
+Most scripts accept the following command-line parameters:
+- `--data_dir`: Directory for the MNIST data (default: 'data/mnist')
+- `--output_dir`: Directory for output files (default: varies by script)
+- `--batch_size`: Batch size for processing (default: 32)
+- `--random_seed`: Random seed for reproducibility (default: 42)
+
+You can get help on the parameters for any script using:
+```bash
+python scripts/<script_name>.py --help
+``` 
