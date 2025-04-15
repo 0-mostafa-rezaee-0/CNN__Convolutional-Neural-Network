@@ -1,32 +1,34 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Extract and visualize sample images from the MNIST dataset.
+Extract sample images from the MNIST dataset for visualization.
+This script:
+- Loads the MNIST dataset
+- Selects representative samples from each digit class
+- Saves the sample images to the data/mnist_samples directory
+- Generates a grid visualization of the samples
 """
 
 import os
 import argparse
 import numpy as np
 import matplotlib.pyplot as plt
-import tensorflow as tf
 from tensorflow.keras.datasets import mnist
-
 
 def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(description='Extract sample images from MNIST dataset')
     parser.add_argument('--data_dir', type=str, default='data/mnist',
-                        help='Directory to load and store MNIST data')
+                        help='Directory with MNIST data')
     parser.add_argument('--samples_dir', type=str, default='data/mnist_samples',
-                        help='Directory to store sample images')
-    parser.add_argument('--figures_dir', type=str, default='figures',
-                        help='Directory to store visualizations')
+                        help='Directory to save sample images')
+    parser.add_argument('--output_file', type=str, default='figures/mnist_samples.png',
+                        help='Path to save grid visualization')
     parser.add_argument('--samples_per_class', type=int, default=5,
                         help='Number of samples to extract per class')
     parser.add_argument('--random_seed', type=int, default=42,
                         help='Random seed for reproducibility')
     return parser.parse_args()
-
 
 def create_directory(directory):
     """Create directory if it doesn't exist."""
@@ -34,120 +36,91 @@ def create_directory(directory):
         os.makedirs(directory)
         print(f"Created directory: {directory}")
 
-
-def load_mnist_data():
-    """Load the MNIST dataset."""
-    print("Loading MNIST dataset...")
-    (x_train, y_train), (x_test, y_test) = mnist.load_data()
-    return x_train, y_train, x_test, y_test
-
-
-def extract_samples(x_data, y_data, samples_per_class, random_seed):
-    """
-    Extract sample images from each class.
-    
-    Args:
-        x_data: Image data
-        y_data: Labels
-        samples_per_class: Number of samples to extract per class
-        random_seed: Random seed for reproducibility
-        
-    Returns:
-        dict: Dictionary with class labels as keys and lists of sample images as values
-    """
+def extract_samples(x_data, y_data, samples_per_class=5, random_seed=42):
+    """Extract sample images from each class."""
     np.random.seed(random_seed)
-    samples = {}
+    samples = []
     
-    # Extract samples for each class (0-9)
+    # For each digit class (0-9)
     for digit in range(10):
-        # Find indices of images for this digit
+        # Find indices of images with this digit
         indices = np.where(y_data == digit)[0]
         
-        # Randomly select samples_per_class samples
+        # Randomly select samples_per_class images
         selected_indices = np.random.choice(indices, samples_per_class, replace=False)
         
-        # Store the selected samples
-        samples[digit] = [x_data[i] for i in selected_indices]
+        # Add selected images to samples list
+        for i, idx in enumerate(selected_indices):
+            samples.append((x_data[idx], digit, i))
     
     return samples
 
-
 def save_samples(samples, samples_dir):
-    """
-    Save extracted sample images to disk.
+    """Save individual sample images."""
+    for img, digit, idx in samples:
+        filename = os.path.join(samples_dir, f"digit_{digit}_sample_{idx}.png")
+        plt.imsave(filename, img, cmap='gray')
     
-    Args:
-        samples: Dictionary with class labels as keys and lists of sample images as values
-        samples_dir: Directory to save samples
-    """
-    for digit, images in samples.items():
-        digit_dir = os.path.join(samples_dir, str(digit))
-        create_directory(digit_dir)
-        
-        for i, img in enumerate(images):
-            plt.imsave(
-                os.path.join(digit_dir, f"sample_{i}.png"),
-                img,
-                cmap='gray'
-            )
-    
-    print(f"Saved sample images to {samples_dir}")
+    print(f"Saved {len(samples)} sample images to {samples_dir}")
 
-
-def create_grid_visualization(samples, figures_dir):
-    """
-    Create and save a grid visualization of sample images.
+def create_grid_visualization(samples, output_file, samples_per_class=5):
+    """Create a grid visualization of sample images."""
+    plt.figure(figsize=(12, 10))
     
-    Args:
-        samples: Dictionary with class labels as keys and lists of sample images as values
-        figures_dir: Directory to save visualization
-    """
-    samples_per_class = len(samples[0])
-    
-    # Create figure
-    plt.figure(figsize=(12, 6))
-    
-    # Plot samples in a grid
-    for i, digit in enumerate(range(10)):
-        for j, image in enumerate(samples[digit]):
-            plt.subplot(10, samples_per_class, i * samples_per_class + j + 1)
-            plt.imshow(image, cmap='gray')
-            plt.axis('off')
-            if j == 0:
-                plt.title(f"Digit: {digit}", fontsize=10)
+    for i, (img, digit, idx) in enumerate(samples):
+        plt.subplot(10, samples_per_class, i + 1)
+        plt.imshow(img, cmap='gray')
+        plt.title(f"Digit: {digit}")
+        plt.axis('off')
     
     plt.tight_layout()
-    
-    # Save the figure
-    output_file = os.path.join(figures_dir, 'mnist_samples.png')
     plt.savefig(output_file, dpi=150, bbox_inches='tight')
     plt.close()
     
     print(f"Created grid visualization: {output_file}")
 
-
 def main():
-    """Main function to extract and visualize MNIST samples."""
+    """Main function."""
     args = parse_args()
     
-    # Create output directories
+    # Create directories
     create_directory(args.samples_dir)
-    create_directory(args.figures_dir)
+    create_directory(os.path.dirname(args.output_file))
     
-    # Load MNIST data
-    x_train, y_train, x_test, y_test = load_mnist_data()
+    # Check if preprocessed data exists
+    if os.path.exists(os.path.join(args.data_dir, 'x_test.npy')):
+        print("Loading preprocessed MNIST data...")
+        x_test = np.load(os.path.join(args.data_dir, 'x_test.npy'))
+        y_test = np.load(os.path.join(args.data_dir, 'y_test.npy'))
+        
+        # Convert one-hot encoded labels back to class indices
+        if len(y_test.shape) > 1:
+            y_test = np.argmax(y_test, axis=1)
+        
+        # Reshape images to 2D for visualization
+        if len(x_test.shape) > 3:  # If shape is (n, 28, 28, 1)
+            x_test = x_test.reshape(-1, 28, 28)
+    else:
+        print("Preprocessed data not found. Loading original MNIST dataset...")
+        (_, _), (x_test, y_test) = mnist.load_data()
     
-    # Extract sample images from each class
+    print("Extracting sample images...")
     samples = extract_samples(
-        x_train, y_train, args.samples_per_class, args.random_seed
+        x_test, y_test, 
+        samples_per_class=args.samples_per_class, 
+        random_seed=args.random_seed
     )
     
-    # Save samples to disk
+    print("Saving sample images...")
     save_samples(samples, args.samples_dir)
     
-    # Create grid visualization
-    create_grid_visualization(samples, args.figures_dir)
-
+    print("Creating grid visualization...")
+    create_grid_visualization(
+        samples, args.output_file, 
+        samples_per_class=args.samples_per_class
+    )
+    
+    print("Sample extraction completed successfully.")
 
 if __name__ == '__main__':
-    main() 
+    main()
