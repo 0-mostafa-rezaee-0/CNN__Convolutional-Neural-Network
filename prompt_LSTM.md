@@ -149,7 +149,6 @@ Folder PATH listing
 │   +---processed               <-- Preprocessed time series data
 │   +---raw                     <-- Raw time series datasets
 │   │       README.md           <-- Documentation for the dataset
-│   │
 │
 +---figures                     <-- Visualizations and plots
 │       forecast_plots.png      <-- Time series forecast visualizations
@@ -165,7 +164,6 @@ Folder PATH listing
 │   +---evaluation              <-- Model evaluation utilities
 │   +---training                <-- Model training utilities
 │   │       README.md           <-- Documentation for models
-│   │
 │   +---__init__.py             <-- Package initialization
 │   +---lstm_model_best.h5      <-- Best model based on validation loss
 │   +---lstm_model_final.h5     <-- Final trained model
@@ -174,7 +172,7 @@ Folder PATH listing
 │
 +---notebooks                   <-- Jupyter notebooks for interactive learning
 │       time_series_lstm.ipynb  <-- Main notebook for the project
-│       exploratory_analysis.ipynb <-- Basic data exploration notebook
+│       exploratory_analysis.ipynb  <-- Basic data exploration notebook
 │       README.md               <-- Documentation for notebooks
 │
 +---scripts                     <-- Python scripts
