@@ -219,6 +219,8 @@ Access Jupyter Lab in your browser at:
 http://localhost:8889
 ```
 
+Note: We map port 8889 on your host to port 8888 in the container. Always use port 8889 in your browser.
+
 There's no token or password required as the configuration disables authentication for ease of use.
 
 ### 5.5 Attaching VS Code to the Container (Optional)
@@ -366,6 +368,7 @@ The project includes visualizations for:
 - **Docker Memory Issues**: If Docker crashes, try increasing the memory allocation in Docker settings
 - **Training Performance**: For faster training, ensure Docker has access to GPU resources if available
 - **Jupyter Lab Connection**: If you can't connect to Jupyter Lab, check that port 8889 is not in use by another application
+- **Permission Issues**: If you encounter "Permission denied" errors when creating directories, make sure your user has write permissions to the project directory. Alternatively, run Docker with the `--user $(id -u):$(id -g)` flag to match container permissions with host permissions.
 
 ## 10. Resources for Further Learning
 

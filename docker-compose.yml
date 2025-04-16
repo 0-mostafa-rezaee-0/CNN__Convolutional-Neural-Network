@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   cnn_mnist:
     build: 
@@ -11,4 +9,3 @@ services:
       - .:/app
     environment:
       - JUPYTER_ENABLE_LAB=yes
-    command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''

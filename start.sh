@@ -1,23 +1,18 @@
 #!/bin/bash
 
+# Use relative paths for directories since we're using volume mounting
 # Check if data directories exist
-if [ ! -d "/app/data/mnist" ]; then
-    echo "Creating data directories..."
-    mkdir -p /app/data/mnist
-    mkdir -p /app/data/mnist_samples
-fi
+echo "Creating data directories if they don't exist..."
+mkdir -p ./data/mnist
+mkdir -p ./data/mnist_samples
 
 # Check if models directory exists
-if [ ! -d "/app/models" ]; then
-    echo "Creating models directory..."
-    mkdir -p /app/models
-fi
+echo "Creating models directory if it doesn't exist..."
+mkdir -p ./models
 
 # Check if figures directory exists
-if [ ! -d "/app/figures" ]; then
-    echo "Creating figures directory..."
-    mkdir -p /app/figures
-fi
+echo "Creating figures directory if it doesn't exist..."
+mkdir -p ./figures
 
 # Run Jupyter lab by default
 echo "Starting Jupyter Lab..."
