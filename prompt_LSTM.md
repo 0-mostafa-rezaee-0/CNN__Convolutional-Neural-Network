@@ -121,55 +121,58 @@ Follow this specific directory structure:
 
 ```
 Folder PATH listing
-+---app                          <-- Main application directory
-│   +---data                     <-- Data directory
-│   │   +---processed            <-- Preprocessed time series data
-│   │   +---raw                  <-- Raw time series datasets
-│   │   │       README.md        <-- Documentation for the dataset
-│   │
-│   +---figures                  <-- Visualizations and plots
-│   │       forecast_plots.png   <-- Time series forecast visualizations
-│   │       training_history.png <-- Training/validation metrics over time
-│   │       feature_importance.png <-- Feature importance visualizations
-│   │       README.md            <-- Documentation for visualizations
-│   │
-│   +---models                   <-- Model implementations and saved files
-│   │   +---architectures        <-- LSTM architecture implementations
-│   │   +---configs              <-- Model configuration files
-│   │   +---evaluation           <-- Model evaluation utilities
-│   │   +---training             <-- Model training utilities
-│   │   │       README.md        <-- Documentation for models
-│   │
-│   +---notebooks                <-- Jupyter notebooks for interactive learning
-│   │       time_series_forecast.ipynb <-- Main notebook for the project
-│   │       exploratory_analysis.ipynb <-- Basic data exploration notebook
-│   │       README.md            <-- Documentation for notebooks
-│   │
-│   +---scripts                  <-- Python scripts
-│   │       data_prep.py         <-- Download and preprocess time series data
-│   │       train_lstm.py        <-- Train the LSTM model
-│   │       evaluate_models.py   <-- Evaluate model performance
-│   │       forecast.py          <-- Generate forecasts with trained models
-│   │       README.md            <-- Documentation for scripts
-│   │
-│   +---utils                    <-- Utility functions and helpers
-│           metrics.py           <-- Custom evaluation metrics
-│           visualization.py     <-- Visualization utilities
-│           preprocessing.py     <-- Preprocessing utilities
-│           README.md            <-- Documentation for utilities
++---data                       <-- Data directory for time series datasets
+│   +---processed              <-- Preprocessed time series data
+│   +---raw                    <-- Raw time series datasets
+│   │       README.md          <-- Documentation for the dataset
 │
-+---docs                         <-- Documentation files
-│       getting_started.md       <-- Getting started guide
-│       advanced_usage.md        <-- Advanced usage documentation
++---figures                    <-- Visualizations and plots
+│       forecast_plots.png     <-- Time series forecast visualizations
+│       training_history.png   <-- Training/validation metrics over time
+│       lstm_states.png        <-- LSTM internal state visualizations
+│       correlation_matrix.png <-- Feature correlation heatmap
+│       prediction_samples.png <-- Examples of predictions
+│       README.md              <-- Documentation for visualizations
 │
-│       .dockerignore            <-- Docker ignore file
-│       .gitignore               <-- Git ignore file
-│       docker-compose.yml       <-- Docker Compose configuration
-│       Dockerfile               <-- Docker configuration for environment setup
-│       LICENSE                  <-- License information
-│       README.md                <-- Project overview
-│       requirements.txt         <-- Python dependencies for the project
-│       start.sh                 <-- Startup script for Docker container
++---models                     <-- Model implementations and saved files
+│   +---architectures          <-- LSTM architecture implementations
+│   +---configs                <-- Model configuration files
+│   +---evaluation             <-- Model evaluation utilities
+│   +---training               <-- Model training utilities
+│   │       README.md          <-- Documentation for models
+│   +---__init__.py            <-- Package initialization
+│   +---lstm_model_best.h5     <-- Best model based on validation loss
+│   +---lstm_model_final.h5    <-- Final trained model
+│   +---model_factory.py       <-- Factory for creating model instances
+│   +---model_registry.py      <-- Registry of available models
+│
++---notebooks                  <-- Jupyter notebooks for interactive learning
+│       time_series_lstm.ipynb <-- Main notebook for the project
+│       exploratory_analysis.ipynb <-- Basic data exploration notebook
+│       README.md              <-- Documentation for notebooks
+│
++---scripts                    <-- Python scripts
+│       data_prep.py           <-- Download and preprocess time series data
+│       train_lstm.py          <-- Train the LSTM model
+│       evaluate_models.py     <-- Evaluate model performance
+│       forecast.py            <-- Generate forecasts with trained models
+│       README.md              <-- Documentation for scripts
+│
++---utils                      <-- Utility functions and helpers
+│       metrics.py             <-- Custom evaluation metrics
+│       visualization.py       <-- Visualization utilities
+│       preprocessing.py       <-- Preprocessing utilities
+│       README.md              <-- Documentation for utilities
+│
+│       .dockerignore          <-- Docker ignore file
+│       .gitignore             <-- Git ignore file
+│       docker-compose.yml     <-- Docker Compose configuration
+│       Dockerfile             <-- Docker configuration for environment setup
+│       LICENSE                <-- License information
+│       README.md              <-- Project overview
+│       requirements.txt       <-- Python dependencies for the project
+│       start.sh               <-- Startup script for Docker container
+│       prompt_LSTM.md         <-- Original project specifications
 ```
 
 ## Specific Implementation Details
