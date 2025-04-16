@@ -46,22 +46,24 @@ Folder PATH listing
 +---training_history.png       <-- Training and validation metrics over epochs
 ```
 
+The directory contains both visualizations from the original CNN implementation and a simpler CNN architecture for comparison. Note that some files may be generated when you run the corresponding scripts or notebooks.
+
 ## 3. Visualization Descriptions
 
 ### 3.1 MNIST Samples (mnist_samples.png)
 A grid visualization of sample digits from the MNIST dataset. Each row represents a different digit class (0-9), and each column shows different examples of handwritten digits. This visualization helps understand the variability within each digit class.
 
-### 3.2 Confusion Matrix (confusion_matrix.png)
-A heatmap showing the model's performance across all digit classes. The rows represent the true digit labels, and the columns represent the predicted labels. The diagonal elements represent correct predictions, while off-diagonal elements represent misclassifications.
+### 3.2 Confusion Matrix (confusion_matrix.png & simple_cnn_confusion_matrix.png)
+A heatmap showing the model's performance across all digit classes. The rows represent the true digit labels, and the columns represent the predicted labels. The diagonal elements represent correct predictions, while off-diagonal elements represent misclassifications. The simple CNN confusion matrix shows results from a basic CNN architecture.
 
-### 3.3 Training History (training_history.png)
-Line plots showing the evolution of training and validation metrics (accuracy and loss) over training epochs. This helps visualize the learning progress and identify potential overfitting or underfitting.
+### 3.3 Training History (training_history.png & simple_cnn_training_history.png)
+Line plots showing the evolution of training and validation metrics (accuracy and loss) over training epochs. This helps visualize the learning progress and identify potential overfitting or underfitting. The simple CNN training history shows the learning progression of our basic CNN implementation.
 
-### 3.4 Feature Maps (feature_maps.png)
-Visualizations of the CNN's internal representations (activations) for sample input images. These visualizations show what features different convolutional layers are detecting, from simple edges in early layers to more complex patterns in deeper layers.
+### 3.4 Feature Maps (feature_maps.png & feature_maps/test_samples.png)
+Visualizations of the CNN's internal representations (activations) for sample input images. These visualizations show what features different convolutional layers are detecting, from simple edges in early layers to more complex patterns in deeper layers. The test_samples.png shows feature maps for specific test examples.
 
-### 3.5 Prediction Samples (prediction_samples.png)
-A grid of example predictions from the model, including both correct and incorrect classifications. For each example, the true label and predicted label are shown, helping to understand the types of digits the model struggles with.
+### 3.5 Prediction Samples (prediction_samples.png & simple_cnn_misclassified.png)
+A grid of example predictions from the model, including both correct and incorrect classifications. For each example, the true label and predicted label are shown, helping to understand the types of digits the model struggles with. The simple_cnn_misclassified.png specifically focuses on digits that were incorrectly classified by the simple CNN model.
 
 ## 4. Generating Visualizations
 
