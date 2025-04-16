@@ -1,4 +1,6 @@
-<div style="font-size:2.5em; font-weight:bold; text-align:center; margin-top:20px;">CNN MNIST Dockerized</div>
+<div style="font-size:2.5em; font-weight:bold; text-align:center; margin-top:20px;">Convolutional Neural Network (CNN): A Dockerized Project</div>
+
+<div style="font-size:2.5em; font-weight:bold; text-align:center; margin-top:20px;">CNN-Based MNIST Digit Recognition</div>
 
 <div style="text-align:center; margin-bottom:30px;">A comprehensive project for digit recognition using Convolutional Neural Networks in Docker</div>
 
@@ -114,7 +116,7 @@ Folder PATH listing
 +---figures                             <-- Visualizations and plots
 |       confusion_matrices              <-- Directory for confusion matrix visualizations
 |       feature_maps                    <-- CNN feature map visualizations
-|       |       test_samples.png        <-- Feature map activations for test samples
+|       test_samples.png                <-- Feature map activations for test samples
 |       confusion_matrix.png            <-- Model performance visualization
 |       feature_maps.png                <-- Feature map visualization overview
 |       mnist_samples.png               <-- Grid of sample MNIST digits
