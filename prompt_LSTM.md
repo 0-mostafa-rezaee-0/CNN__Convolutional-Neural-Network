@@ -148,7 +148,7 @@ Folder PATH listing
 +---data                        <-- Data directory for time series datasets
 │   +---processed               <-- Preprocessed time series data
 │   +---raw                     <-- Raw time series datasets
-│   │       README.md           <-- Documentation for the dataset
+│           README.md           <-- Documentation for the dataset
 │
 +---figures                     <-- Visualizations and plots
 │       forecast_plots.png      <-- Time series forecast visualizations
@@ -163,7 +163,8 @@ Folder PATH listing
 │   +---configs                 <-- Model configuration files
 │   +---evaluation              <-- Model evaluation utilities
 │   +---training                <-- Model training utilities
-│   │       README.md           <-- Documentation for models
+│           README.md           <-- Documentation for models
+│
 │   +---__init__.py             <-- Package initialization
 │   +---lstm_model_best.h5      <-- Best model based on validation loss
 │   +---lstm_model_final.h5     <-- Final trained model
@@ -188,15 +189,15 @@ Folder PATH listing
 │       preprocessing.py        <-- Preprocessing utilities
 │       README.md               <-- Documentation for utilities
 │
-│       .dockerignore           <-- Docker ignore file
-│       .gitignore              <-- Git ignore file
-│       docker-compose.yml      <-- Docker Compose configuration
-│       Dockerfile              <-- Docker configuration for environment setup
-│       LICENSE                 <-- License information
-│       README.md               <-- Project overview
-│       requirements.txt        <-- Python dependencies for the project
-│       start.sh                <-- Startup script for Docker container
-│       prompt_LSTM.md          <-- Original project specifications
+        .dockerignore           <-- Docker ignore file
+        .gitignore              <-- Git ignore file
+        docker-compose.yml      <-- Docker Compose configuration
+        Dockerfile              <-- Docker configuration for environment setup
+        LICENSE                 <-- License information
+        README.md               <-- Project overview
+        requirements.txt        <-- Python dependencies for the project
+        start.sh                <-- Startup script for Docker container
+        prompt_LSTM.md          <-- Original project specifications
 ```
 
 Make sure to follow this exact structure when implementing the project, including all files and directories as shown.
