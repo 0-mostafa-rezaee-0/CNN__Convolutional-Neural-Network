@@ -114,7 +114,10 @@ Folder PATH listing
 |       README.md                       <-- Documentation for the dataset
 |
 +---figures                             <-- Visualizations and plots
+|       confusion_matrices              <-- Directory for confusion matrix visualizations
 |       feature_maps                    <-- CNN feature map visualizations
+|       |       test_samples.png        <-- Feature map activations for test samples
+|       |
 |       confusion_matrix.png            <-- Model performance visualization
 |       feature_maps.png                <-- Feature map visualization overview
 |       mnist_samples.png               <-- Grid of sample MNIST digits
