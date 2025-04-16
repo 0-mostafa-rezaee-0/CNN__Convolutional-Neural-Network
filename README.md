@@ -1,6 +1,4 @@
-<div align="center">
-  <h1>Convolutional Neural Network (CNN): A Dockerized Project</h1>
-</div>
+<h1 align="center">Convolutional Neural Network (CNN): A Dockerized Project</h1>
 
 <div align="center">
   <h2>CNN-Based MNIST Digit Recognition</h2>
