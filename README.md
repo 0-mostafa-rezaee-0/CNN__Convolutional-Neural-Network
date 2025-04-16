@@ -139,7 +139,6 @@ Folder PATH listing
 |
 +---notebooks                  <-- Jupyter notebooks for interactive learning
 |   +---CNN_MNIST-data.ipynb   <-- Main notebook for the project
-|   +---exploratory_analysis.ipynb <-- Basic data exploration notebook
 |   +---README.md              <-- Documentation for notebooks
 |
 +---scripts                    <-- Python scripts
@@ -158,7 +157,6 @@ Folder PATH listing
 +---docker-compose.yml         <-- Docker Compose configuration for service definition
 +---Dockerfile                 <-- Docker configuration for environment setup
 +---LICENSE                    <-- Project license information
-+---prompt_CNN_MNIST.md        <-- Original project specifications
 +---README.md                  <-- Project overview and instructions
 +---requirements.txt           <-- Python dependencies for the project
 +---start.sh                   <-- Startup script for Docker container

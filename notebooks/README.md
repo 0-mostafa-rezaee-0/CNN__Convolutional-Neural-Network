@@ -15,7 +15,6 @@
   <summary><a href="#3-notebook-descriptions"><i><b>3. Notebook Descriptions</b></i></a></summary>
   <div>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#31-cnn_mnist-dataipynb">3.1. CNN_MNIST-data.ipynb</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#32-exploratory_analysisipynb">3.2. exploratory_analysis.ipynb</a><br>
   </div>
 </details>
 &nbsp;
@@ -40,7 +39,6 @@ This directory contains Jupyter notebooks for interactive exploration and learni
 Folder PATH listing
 .
 +---CNN_MNIST-data.ipynb       <-- Main notebook for the project
-+---exploratory_analysis.ipynb <-- Basic data exploration notebook
 +---README.md                  <-- This documentation file
 ```
 
@@ -58,15 +56,6 @@ The main notebook for the project that covers the complete workflow:
 - Comparing CNN with traditional neural networks
 
 This notebook is designed to be self-contained and educational, with detailed explanations of each step.
-
-### 3.2 exploratory_analysis.ipynb
-
-This notebook focuses on exploring the MNIST dataset:
-
-- Loading and visualizing sample digits
-- Analyzing the distribution of classes
-- Examining image properties and variations
-- Basic data preprocessing and visualization techniques
 
 ## 4. Using the Notebooks
 
