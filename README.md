@@ -107,59 +107,59 @@ This project serves as a learning tool for:
 ```
 Folder PATH listing
 .
-+---data                       <-- Data directory for MNIST dataset
-|   +---mnist                  <-- Raw and processed MNIST data (generated at runtime)
-|   +---mnist_samples          <-- Sample images extracted from MNIST for visualization
-|   +---README.md              <-- Documentation for the dataset
++---data                                <-- Data directory for MNIST dataset
+|       mnist                           <-- Raw and processed MNIST data (generated at runtime)
+|       mnist_samples                   <-- Sample images extracted from MNIST for visualization
+|       README.md                       <-- Documentation for the dataset
 |
-+---figures                    <-- Visualizations and plots
-|   +---feature_maps           <-- CNN feature map visualizations
-|   +---confusion_matrix.png   <-- Model performance visualization
-|   +---feature_maps.png       <-- Feature map visualization overview
-|   +---mnist_samples.png      <-- Grid of sample MNIST digits
-|   +---prediction_samples.png <-- Examples of model predictions
-|   +---README.md              <-- Documentation for visualizations
-|   +---simple_cnn_confusion_matrix.png <-- Simple CNN confusion matrix
-|   +---simple_cnn_misclassified.png <-- Misclassified examples
-|   +---simple_cnn_training_history.png <-- Training metrics for simple CNN
-|   +---training_history.png   <-- Training/validation metrics over time
++---figures                             <-- Visualizations and plots
+|       feature_maps                    <-- CNN feature map visualizations
+|       confusion_matrix.png            <-- Model performance visualization
+|       feature_maps.png                <-- Feature map visualization overview
+|       mnist_samples.png               <-- Grid of sample MNIST digits
+|       prediction_samples.png          <-- Examples of model predictions
+|       README.md                       <-- Documentation for visualizations
+|       simple_cnn_confusion_matrix.png <-- Simple CNN confusion matrix
+|       simple_cnn_misclassified.png    <-- Misclassified examples
+|       simple_cnn_training_history.png <-- Training metrics for simple CNN
+|       training_history.png            <-- Training/validation metrics over time
 |
-+---models                     <-- Model implementations and saved files
-|   +---architectures          <-- CNN architecture implementations
-|   +---configs                <-- Model configuration files
-|   +---evaluation             <-- Model evaluation utilities
-|   +---training               <-- Model training utilities
-|   +---__init__.py            <-- Package initialization
-|   +---mnist_cnn_best.h5      <-- Best model based on validation accuracy
-|   +---mnist_cnn_final.h5     <-- Final trained model
-|   +---model_factory.py       <-- Factory for creating model instances
-|   +---model_registry.py      <-- Registry of available models
-|   +---README.md              <-- Documentation for models
-|   +---simple_cnn_final.h5    <-- Trained simple CNN model
++---models                              <-- Model implementations and saved files
+|       architectures                   <-- CNN architecture implementations
+|       configs                         <-- Model configuration files
+|       evaluation                      <-- Model evaluation utilities
+|       training                        <-- Model training utilities
+|       __init__.py                     <-- Package initialization
+|       mnist_cnn_best.h5               <-- Best model based on validation accuracy
+|       mnist_cnn_final.h5              <-- Final trained model
+|       model_factory.py                <-- Factory for creating model instances
+|       model_registry.py               <-- Registry of available models
+|       README.md                       <-- Documentation for models
+|       simple_cnn_final.h5             <-- Trained simple CNN model
 |
-+---notebooks                  <-- Jupyter notebooks for interactive learning
-|   +---CNN_MNIST-data.ipynb   <-- Main notebook for the project
-|   +---README.md              <-- Documentation for notebooks
++---notebooks                           <-- Jupyter notebooks for interactive learning
+|       CNN_MNIST-data.ipynb            <-- Main notebook for the project
+|       README.md                       <-- Documentation for notebooks
 |
-+---scripts                    <-- Python scripts
-|   +---data_prep.py           <-- Download and preprocess MNIST data
-|   +---extract_sample_images.py <-- Extract sample images for visualization
-|   +---README.md              <-- Documentation for scripts
-|   +---train_cnn.py           <-- Train the CNN model
-|   +---visualize_features.py  <-- Generate feature map visualizations
++---scripts                             <-- Python scripts
+|       data_prep.py                    <-- Download and preprocess MNIST data
+|       extract_sample_images.py        <-- Extract sample images for visualization
+|       README.md                       <-- Documentation for scripts
+|       train_cnn.py                    <-- Train the CNN model
+|       visualize_features.py           <-- Generate feature map visualizations
 |
-+---utils                      <-- Utility functions and helpers
-|   +---README.md              <-- Documentation for utilities
-|   +---toc_generator.py       <-- Table of contents generator for markdown files
++---utils                               <-- Utility functions and helpers
+|       README.md                       <-- Documentation for utilities
+|       toc_generator.py                <-- Table of contents generator for markdown files
 |
-+---.dockerignore              <-- Docker ignore file
-+---.gitignore                 <-- Git ignore file
-+---docker-compose.yml         <-- Docker Compose configuration for service definition
-+---Dockerfile                 <-- Docker configuration for environment setup
-+---LICENSE                    <-- Project license information
-+---README.md                  <-- Project overview and instructions
-+---requirements.txt           <-- Python dependencies for the project
-+---start.sh                   <-- Startup script for Docker container
+|   .dockerignore                       <-- Docker ignore file
+|   .gitignore                          <-- Git ignore file
+|   docker-compose.yml                  <-- Docker Compose configuration for service definition
+|   Dockerfile                          <-- Docker configuration for environment setup
+|   LICENSE                             <-- Project license information
+|   README.md                           <-- Project overview and instructions
+|   requirements.txt                    <-- Python dependencies for the project
+|   start.sh                            <-- Startup script for Docker container
 ```
 
 ## 5. Getting Started
