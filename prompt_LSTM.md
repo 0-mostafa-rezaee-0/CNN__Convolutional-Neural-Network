@@ -117,63 +117,91 @@ Create a comprehensive, well-documented project for time series forecasting usin
 5. Document all components thoroughly with README files
 
 ### Project Structure
-Follow this specific directory structure:
+
+Follow this specific directory structure exactly. All the README.md files should follow the documentation standards outlined in the "Tree Structure Documentation" section below.
+
+## Tree Structure Documentation
+
+TASK: 
+Turn any folder/file list I give you into a Markdown‑compatible tree diagram that follows the rules below.
+
+TEMPLATE RULES: 
+1. Output one fenced code block using triple back‑ticks ``` (no language tag).  
+2. First line inside the block must be exactly:  Folder PATH listing
+3. Inside every directory:  
+   • List sub‑directories first (alphabetical).  
+   • Then list files (alphabetical).  
+4. Connectors & indentation  
+   • Directory on the current level → prefix +---  
+   • File (any depth)               → for each ancestor directory, write │     
+                                      then four spaces (␣␣␣␣) and the filename  
+                                      (no "+---").  
+   • Maintain the vertical spine by repeating │    for each ancestor level.  
+5. Alignment  
+   • Pad with spaces so all descriptions start in the same column.  
+   • After the name, add two spaces, then <-- and a concise description.  
+6. Insert a line containing only │ after the last child of every directory to visually close that block.  
+7. Output nothing outside the code block—no commentary, no extra Markdown.
 
 ```
 Folder PATH listing
-+---data                       <-- Data directory for time series datasets
-│   +---processed              <-- Preprocessed time series data
-│   +---raw                    <-- Raw time series datasets
-│   │       README.md          <-- Documentation for the dataset
++---data                        <-- Data directory for time series datasets
+│   +---processed               <-- Preprocessed time series data
+│   +---raw                     <-- Raw time series datasets
+│   │       README.md           <-- Documentation for the dataset
+│   │
 │
-+---figures                    <-- Visualizations and plots
-│       forecast_plots.png     <-- Time series forecast visualizations
-│       training_history.png   <-- Training/validation metrics over time
-│       lstm_states.png        <-- LSTM internal state visualizations
-│       correlation_matrix.png <-- Feature correlation heatmap
-│       prediction_samples.png <-- Examples of predictions
-│       README.md              <-- Documentation for visualizations
++---figures                     <-- Visualizations and plots
+│       forecast_plots.png      <-- Time series forecast visualizations
+│       training_history.png    <-- Training/validation metrics over time
+│       lstm_states.png         <-- LSTM internal state visualizations
+│       correlation_matrix.png  <-- Feature correlation heatmap
+│       prediction_samples.png  <-- Examples of predictions
+│       README.md               <-- Documentation for visualizations
 │
-+---models                     <-- Model implementations and saved files
-│   +---architectures          <-- LSTM architecture implementations
-│   +---configs                <-- Model configuration files
-│   +---evaluation             <-- Model evaluation utilities
-│   +---training               <-- Model training utilities
-│   │       README.md          <-- Documentation for models
-│   +---__init__.py            <-- Package initialization
-│   +---lstm_model_best.h5     <-- Best model based on validation loss
-│   +---lstm_model_final.h5    <-- Final trained model
-│   +---model_factory.py       <-- Factory for creating model instances
-│   +---model_registry.py      <-- Registry of available models
++---models                      <-- Model implementations and saved files
+│   +---architectures           <-- LSTM architecture implementations
+│   +---configs                 <-- Model configuration files
+│   +---evaluation              <-- Model evaluation utilities
+│   +---training                <-- Model training utilities
+│   │       README.md           <-- Documentation for models
+│   │
+│   +---__init__.py             <-- Package initialization
+│   +---lstm_model_best.h5      <-- Best model based on validation loss
+│   +---lstm_model_final.h5     <-- Final trained model
+│   +---model_factory.py        <-- Factory for creating model instances
+│   +---model_registry.py       <-- Registry of available models
 │
-+---notebooks                  <-- Jupyter notebooks for interactive learning
-│       time_series_lstm.ipynb <-- Main notebook for the project
++---notebooks                   <-- Jupyter notebooks for interactive learning
+│       time_series_lstm.ipynb  <-- Main notebook for the project
 │       exploratory_analysis.ipynb <-- Basic data exploration notebook
-│       README.md              <-- Documentation for notebooks
+│       README.md               <-- Documentation for notebooks
 │
-+---scripts                    <-- Python scripts
-│       data_prep.py           <-- Download and preprocess time series data
-│       train_lstm.py          <-- Train the LSTM model
-│       evaluate_models.py     <-- Evaluate model performance
-│       forecast.py            <-- Generate forecasts with trained models
-│       README.md              <-- Documentation for scripts
++---scripts                     <-- Python scripts
+│       data_prep.py            <-- Download and preprocess time series data
+│       train_lstm.py           <-- Train the LSTM model
+│       evaluate_models.py      <-- Evaluate model performance
+│       forecast.py             <-- Generate forecasts with trained models
+│       README.md               <-- Documentation for scripts
 │
-+---utils                      <-- Utility functions and helpers
-│       metrics.py             <-- Custom evaluation metrics
-│       visualization.py       <-- Visualization utilities
-│       preprocessing.py       <-- Preprocessing utilities
-│       README.md              <-- Documentation for utilities
++---utils                       <-- Utility functions and helpers
+│       metrics.py              <-- Custom evaluation metrics
+│       visualization.py        <-- Visualization utilities
+│       preprocessing.py        <-- Preprocessing utilities
+│       README.md               <-- Documentation for utilities
 │
-│       .dockerignore          <-- Docker ignore file
-│       .gitignore             <-- Git ignore file
-│       docker-compose.yml     <-- Docker Compose configuration
-│       Dockerfile             <-- Docker configuration for environment setup
-│       LICENSE                <-- License information
-│       README.md              <-- Project overview
-│       requirements.txt       <-- Python dependencies for the project
-│       start.sh               <-- Startup script for Docker container
-│       prompt_LSTM.md         <-- Original project specifications
+│       .dockerignore           <-- Docker ignore file
+│       .gitignore              <-- Git ignore file
+│       docker-compose.yml      <-- Docker Compose configuration
+│       Dockerfile              <-- Docker configuration for environment setup
+│       LICENSE                 <-- License information
+│       README.md               <-- Project overview
+│       requirements.txt        <-- Python dependencies for the project
+│       start.sh                <-- Startup script for Docker container
+│       prompt_LSTM.md          <-- Original project specifications
 ```
+
+Make sure to follow this exact structure when implementing the project, including all files and directories as shown.
 
 ## Specific Implementation Details
 
@@ -309,28 +337,6 @@ Build a Table of Contents that works in a Markdown (.md) file, following the exa
   &nbsp;&nbsp;&nbsp;&nbsp;<a href="#heading-1-2"><i><b>3. Heading 1</b></i></a>
 </div>
 &nbsp;
-
-## Tree Structure Documentation
-TASK: 
-Turn any folder/file list I give you into a Markdown‑compatible tree diagram that follows the rules below.
-
-TEMPLATE RULES: 
-1. Output one fenced code block using triple back‑ticks ``` (no language tag).  
-2. First line inside the block must be exactly:  Folder PATH listing
-3. Inside every directory:  
-   • List sub‑directories first (alphabetical).  
-   • Then list files (alphabetical).  
-4. Connectors & indentation  
-   • Directory on the current level → prefix +---  
-   • File (any depth)               → for each ancestor directory, write │     
-                                      then four spaces (␣␣␣␣) and the filename  
-                                      (no "+---").  
-   • Maintain the vertical spine by repeating │    for each ancestor level.  
-5. Alignment  
-   • Pad with spaces so all descriptions start in the same column.  
-   • After the name, add two spaces, then <-- and a concise description.  
-6. Insert a line containing only │ after the last child of every directory to visually close that block.  
-7. Output nothing outside the code block—no commentary, no extra Markdown.
 
 ## Docker Setup Instructions
 
