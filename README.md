@@ -1,3 +1,7 @@
+<div align="center">
+    <img src="figures/logo.png" alt="logo" width="70%">
+</div>
+
 <h1 align="center">Convolutional Neural Network (CNN): A Dockerized Project</h1>
 
 <div align="center">
