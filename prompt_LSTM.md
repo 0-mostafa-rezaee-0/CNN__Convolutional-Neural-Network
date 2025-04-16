@@ -1,5 +1,100 @@
 # LSTM-Based Time Series Forecasting Project Prompt
 
+<div style="font-size:2.5em; font-weight:bold; text-align:center; margin-top:20px;">LSTM-Based Time Series Forecasting Project</div>
+
+<div style="text-align:center; margin-bottom:30px;">A comprehensive project for time series forecasting using Long Short-Term Memory networks in Docker</div>
+
+## Table of Contents
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#task-overview"><i><b>1. Task Overview</b></i></a>
+</div>
+&nbsp;
+
+<details>
+  <summary><a href="#project-requirements"><i><b>2. Project Requirements</b></i></a></summary>
+  <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#core-functionality">2.1. Core Functionality</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#technical-specifications">2.2. Technical Specifications</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#project-structure">2.3. Project Structure</a><br>
+  </div>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#specific-implementation-details"><i><b>3. Specific Implementation Details</b></i></a></summary>
+  <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-docker-environment">3.1. Docker Environment</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2-lstm-architecture">3.2. LSTM Architecture</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-training-approach">3.3. Training Approach</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#4-visualization-requirements">3.4. Visualization Requirements</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#5-documentation-standards">3.5. Documentation Standards</a><br>
+  </div>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#expected-project-structure-for-readme-files"><i><b>4. Expected Project Structure for README Files</b></i></a></summary>
+  <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#main-readmemd">4.1. Main README.md</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#directory-specific-readmes">4.2. Directory-Specific READMEs</a><br>
+  </div>
+</details>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#educational-focus"><i><b>5. Educational Focus</b></i></a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#deliverables"><i><b>6. Deliverables</b></i></a>
+</div>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#comparison-with-traditional-models"><i><b>7. Comparison with Traditional Models</b></i></a>
+</div>
+&nbsp;
+
+<details>
+  <summary><a href="#toc-generation-rules"><i><b>8. TOC Generation Rules</b></i></a></summary>
+  <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#template-rules">8.1. Template Rules</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#example">8.2. Example</a><br>
+  </div>
+</details>
+&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tree-structure-documentation"><i><b>9. Tree Structure Documentation</b></i></a>
+</div>
+&nbsp;
+
+<details>
+  <summary><a href="#docker-setup-instructions"><i><b>10. Docker Setup Instructions</b></i></a></summary>
+  <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#step-1-build-and-run-your-container">10.1. Step 1: Build and Run Your Container</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#step-2-verify-the-container">10.2. Step 2: Verify the Container</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#step-3-attach-vs-code-to-the-container">10.3. Step 3: Attach VS Code to the Container</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#step-4-run-the-python-script">10.4. Step 4: Run the Python Script</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#step-5-work-with-jupyter-notebooks-in-vs-code">10.5. Step 5: Work with Jupyter Notebooks in VS Code</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#step-6-stop-and-remove-the-container">10.6. Step 6: Stop and Remove the Container</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#note-1-jupyter-on-browser">10.7. Note 1: Jupyter on Browser</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#note-2-keeping-your-environment-up-to-date">10.8. Note 2: Keeping Your Environment Up-to-Date</a><br>
+  </div>
+</details>
+&nbsp;
+
+<details>
+  <summary><a href="#essential-docker-commands"><i><b>11. Essential Docker Commands</b></i></a></summary>
+  <div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#managing-images">11.1. Managing Images</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#managing-containers">11.2. Managing Containers</a><br>
+  </div>
+</details>
+&nbsp;
+
 ## Task Overview
 
 Create a comprehensive, well-documented project for time series forecasting using Long Short-Term Memory (LSTM) neural networks within a Docker container environment. The project should follow a clear, educational structure suitable for students learning about sequence modeling, deep learning, and containerization.
@@ -162,7 +257,7 @@ The project should explicitly highlight:
 TASK:
 Build a Table of Contents that works in a Markdown (.md) file, following the exact format below.
 
-TEMPLATE RULES:
+### Template Rules
 1. For every level‑1 heading (H1) that has at least one level‑2 child (H2), create a collapsible block:
    <details>
      <summary><a href="#{slug}"><i><b>{num}. {title}</b></i></a></summary>
@@ -192,7 +287,7 @@ TEMPLATE RULES:
 
 8. The order of headings in the Table of Contents is based on the order of headings in text.
 
-Example:
+### Example
 <div>
   &nbsp;&nbsp;&nbsp;&nbsp;<a href="#heading-1"><i><b>1. Heading 1</b></i></a>
 </div>
@@ -305,13 +400,13 @@ You should see the expected output (downloading and preprocessing datasets).
 - In the top-right corner of the notebook, you should see a kernel with the same name as your project. If not, click the `Select Kernel` button and choose the `Jupyter kernel` option. This will display a kernel with your project's name and the Python kernel specified in the Dockerfile. The libraries from the `requirements.txt` file, installed in the Docker container, will be automatically available for use.
 - You can now run and edit cells within the container.
 
-### Step 6: Stop and remove the container
+### Step 6: Stop and Remove the Container
 
 ```
 docker-compose down
 ```
 
-### Note 1: Jupyter on browser
+### Note 1: Jupyter on Browser
 
 Access the Jupyter interface directly in your browser at localhost:8888
 
