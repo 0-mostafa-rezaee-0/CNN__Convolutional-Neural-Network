@@ -1,8 +1,8 @@
 <div style="font-size:2.5em; font-weight:bold; text-align:center; margin-top:20px;">Convolutional Neural Network (CNN): A Dockerized Project</div>
 
-<div style="font-size:2.5em; font-weight:bold; text-align:center; margin-top:20px;">CNN-Based MNIST Digit Recognition</div>
+CNN-Based MNIST Digit Recognition
 
-<div style="text-align:center; margin-bottom:30px;">A comprehensive project for digit recognition using Convolutional Neural Networks in Docker</div>
+A comprehensive project for digit recognition using Convolutional Neural Networks in Docker
 
 ## Table of Contents 
 <div>
