@@ -56,6 +56,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#72-cnn-architecture">7.2. CNN Architecture</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#73-model-training">7.3. Model Training</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#74-visualizations">7.4. Visualizations</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#75-results-and-visualizations">7.5. Results and Visualizations</a><br>
   </div>
 </details>
 &nbsp;
@@ -355,6 +356,29 @@ The project includes visualizations for:
 - Confusion matrix of model predictions
 - CNN feature maps
 - Examples of correct and incorrect predictions
+
+### 7.5 Results and Visualizations
+
+Here are some of the results and visualizations from running the model:
+
+### MNIST Sample Digits
+![MNIST Sample Digits](figures/mnist_samples.png)
+
+### Training History
+This plot shows the training and validation accuracy and loss over epochs:
+![Training History](figures/simple_cnn_training_history.png)
+
+### Confusion Matrix
+The confusion matrix shows the model's classification performance across all digit classes:
+![Confusion Matrix](figures/simple_cnn_confusion_matrix.png)
+
+### Misclassified Examples
+Some examples of digits that were misclassified by the model:
+![Misclassified Digits](figures/simple_cnn_misclassified.png)
+
+### CNN Feature Maps
+Visualization of the feature maps from convolutional layers:
+![Feature Maps](figures/feature_maps/test_samples.png)
 
 ## 8. Learning Exercises
 
