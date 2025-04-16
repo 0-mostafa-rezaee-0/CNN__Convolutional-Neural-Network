@@ -160,7 +160,6 @@ Folder PATH listing
 +---README.md                  <-- Project overview and instructions
 +---requirements.txt           <-- Python dependencies for the project
 +---start.sh                   <-- Startup script for Docker container
-+---test_toc.md                <-- Test file for TOC generator
 ```
 
 ## 5. Getting Started
