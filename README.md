@@ -154,7 +154,10 @@ Folder PATH listing
 |       simple_cnn_final.h5             <-- Trained simple CNN model
 |
 +---notebooks                           <-- Jupyter notebooks for interactive learning
-|       CNN_MNIST-data.ipynb            <-- Main notebook for the project
+|       01_data_exploration.ipynb       <-- Data exploration and visualization notebook
+|       02_model_training.ipynb         <-- Model training and evaluation notebook
+|       figures/                        <-- Generated visualizations
+|       models/                         <-- Saved models from notebooks
 |       README.md                       <-- Documentation for notebooks
 |
 +---scripts                             <-- Python scripts
