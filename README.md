@@ -7,7 +7,7 @@ This will create your own copy of this project, which you can modify freely — 
 ---    
 
 <div align="center">
-    <img src="figures/logo.png" alt="logo" width="70%">
+    <img src="figures/banner.png" alt="banner" width="70%">
 </div>
 
 <h1 align="center">Convolutional Neural Network (CNN): A Dockerized Project</h1>
